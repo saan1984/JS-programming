@@ -1,11 +1,10 @@
 /* implement mapMe prototype method in array, that will behave like map
-  var arr= [1,2,3];
+var arr= [1,2,3];
 var result = arr.map(function(item){
      console.log(item);
     return item*2
 });
 console.log(result)
-
  */
 Array.prototype.mapMe = function (fn){
     const myArray = this;

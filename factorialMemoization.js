@@ -1,10 +1,14 @@
 function factorial(n){
     const cache = {};
-    if(!cache[n]) {
-        cache[n] =  (n === 1 )? n : n * factorial(n-1)
+    return innerFact = (n) => {
+        if(!cache[n]) {
+            cache[n] =  (n === 1 )? n : n * innerFact(n-1)
+        }
+        console.log('cache', cache);
+        return cache[n]
     }
-    return cache[n]
-}
 
-console.log(factorial(3));
-console.log(factorial(5))
+}
+const factorialMe = factorial(3);
+console.log(factorialMe(3));
+console.log(factorialMe(5))

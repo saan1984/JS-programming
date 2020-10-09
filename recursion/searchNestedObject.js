@@ -3,6 +3,22 @@
 // Example, nestedObject={ a: {b: c:{d:44}}} contains(nestedObject, 44); // true
 
 
-function contains(obj) {
-    if(obj)
+function contains(obj, val){
+    for(const [key, value] of Object.entries(obj)){
+        if(val == value){
+            return true;
+        } else {
+             return contains(value, val)
+        }
+    }
+    return false;
 }
+
+nestedObject={
+    a: {
+        b: 44
+    }
+}
+
+
+console.log(contains(nestedObject, 44))
